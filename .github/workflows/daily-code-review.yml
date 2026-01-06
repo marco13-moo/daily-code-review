@@ -1,0 +1,97 @@
+name: Daily Code Review Simulation
+
+on:
+  schedule:
+    - cron: "30 7 * * *"   # daily at 07:30 UTC
+  workflow_dispatch:
+
+jobs:
+  code_review:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GH_REVIEW_TOKEN }}
+
+      - name: Set date
+        run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
+
+      - name: Ensure review log exists
+        run: touch review-log.md
+
+      - name: Pick random review comment
+        run: |
+          COMMENTS=(
+            "Refactored function for readability"
+            "Added missing semicolons"
+            "Improved variable naming for clarity"
+            "Updated example output in docs"
+            "Fixed edge case in sample code"
+            "Added comment explaining logic"
+            "Reorganized imports"
+            "Simplified conditional statements"
+            "Improved error handling"
+            "Minor formatting corrections"
+            "Clarified instructions in README"
+            "Updated function examples"
+            "Added note about performance"
+            "Fixed typo in variable names"
+            "Improved code snippet formatting"
+            "Added brief explanation for edge cases"
+            "Updated sample usage comments"
+            "Fixed minor bug in example"
+            "Refined wording in review notes"
+            "Enhanced readability of examples"
+          )
+          INDEX=$((RANDOM % ${#COMMENTS[@]}))
+          echo "REVIEW_COMMENT=${COMMENTS[$INDEX]}" >> $GITHUB_ENV
+
+      - name: Update review log and sample code
+        run: |
+          echo "- $DATE: $REVIEW_COMMENT" >> review-log.md
+          echo "// $REVIEW_COMMENT" > sample-code/example.js
+
+      - name: Commit changes
+        run: |
+          git checkout -b review-$DATE
+          git config user.name "code-review-bot"
+          git config user.email "bot@users.noreply.github.com"
+          git add review-log.md sample-code/example.js
+          git commit -m "Daily code review: $REVIEW_COMMENT"
+          git push origin review-$DATE
+
+      - name: Create PR
+        env:
+          GH_TOKEN: ${{ secrets.GH_REVIEW_TOKEN }}
+        run: |
+          PR_URL=$(gh pr create \
+            --title "Daily code review: $REVIEW_COMMENT" \
+            --body "Automated daily code review simulation.\n\n$REVIEW_COMMENT" \
+            --base main \
+            --head review-$DATE)
+          PR_NUMBER=$(basename "$PR_URL")
+          echo "PR_NUMBER=$PR_NUMBER" >> $GITHUB_ENV
+
+      - name: Merge PR automatically
+        env:
+          GH_TOKEN: ${{ secrets.GH_REVIEW_TOKEN }}
+        run: |
+          gh pr merge $PR_NUMBER --merge --delete-branch
+
+      - name: Create review issue
+        env:
+          GH_TOKEN: ${{ secrets.GH_REVIEW_TOKEN }}
+        run: |
+          ISSUE_URL=$(gh issue create \
+            --title "Code review log: $REVIEW_COMMENT" \
+            --body "Simulated daily code review entry.\n\n$REVIEW_COMMENT")
+          ISSUE_NUMBER=$(basename "$ISSUE_URL") 
+          echo "ISSUE_NUMBER=$ISSUE_NUMBER" >> $GITHUB_ENV
+
+      - name: Close review issue
+        env:
+          GH_TOKEN: ${{ secrets.GH_REVIEW_TOKEN }}
+        run: |
+          gh issue close $ISSUE_NUMBER --comment "Automatically completed."
