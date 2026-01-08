@@ -1,1 +1,1 @@
-// Enhanced readability of examples
+// Refactored function for readability
