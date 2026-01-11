@@ -1,1 +1,1 @@
-// Added comment explaining logic
+// Refined wording in review notes
