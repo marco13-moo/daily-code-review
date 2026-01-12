@@ -5,3 +5,4 @@
 - 2026-01-09: Refactored function for readability
 - 2026-01-10: Added comment explaining logic
 - 2026-01-11: Refined wording in review notes
+- 2026-01-12: Added note about performance
