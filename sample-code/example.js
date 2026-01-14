@@ -1,1 +1,1 @@
-// Fixed minor bug in example
+// Added brief explanation for edge cases
