@@ -8,3 +8,4 @@
 - 2026-01-12: Added note about performance
 - 2026-01-13: Fixed minor bug in example
 - 2026-01-14: Added brief explanation for edge cases
+- 2026-01-15: Fixed edge case in sample code

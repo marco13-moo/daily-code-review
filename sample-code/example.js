@@ -1,1 +1,1 @@
-// Added brief explanation for edge cases
+// Fixed edge case in sample code
