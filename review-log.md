@@ -10,3 +10,4 @@
 - 2026-01-14: Added brief explanation for edge cases
 - 2026-01-15: Fixed edge case in sample code
 - 2026-01-16: Updated function examples
+- 2026-01-17: Updated example output in docs
