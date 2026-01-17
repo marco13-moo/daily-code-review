@@ -1,1 +1,1 @@
-// Updated function examples
+// Updated example output in docs
