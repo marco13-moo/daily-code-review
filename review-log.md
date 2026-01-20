@@ -13,3 +13,4 @@
 - 2026-01-17: Updated example output in docs
 - 2026-01-18: Clarified instructions in README
 - 2026-01-19: Updated example output in docs
+- 2026-01-20: Fixed typo in variable names
