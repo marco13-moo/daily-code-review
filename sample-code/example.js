@@ -1,1 +1,1 @@
-// Updated example output in docs
+// Fixed typo in variable names
