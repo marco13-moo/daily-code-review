@@ -19,3 +19,4 @@
 - 2026-01-23: Updated example output in docs
 - 2026-01-24: Refactored function for readability
 - 2026-01-25: Added missing semicolons
+- 2026-01-26: Clarified instructions in README
