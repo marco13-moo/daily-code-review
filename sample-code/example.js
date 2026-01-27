@@ -1,1 +1,1 @@
-// Clarified instructions in README
+// Refined wording in review notes
