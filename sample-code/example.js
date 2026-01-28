@@ -1,1 +1,1 @@
-// Refined wording in review notes
+// Minor formatting corrections
