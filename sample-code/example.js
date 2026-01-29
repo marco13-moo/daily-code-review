@@ -1,1 +1,1 @@
-// Minor formatting corrections
+// Clarified instructions in README
