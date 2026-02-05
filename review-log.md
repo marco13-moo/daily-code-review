@@ -29,3 +29,4 @@
 - 2026-02-02: Updated example output in docs
 - 2026-02-03: Refactored function for readability
 - 2026-02-04: Improved variable naming for clarity
+- 2026-02-05: Added comment explaining logic
