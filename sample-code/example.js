@@ -1,1 +1,1 @@
-// Improved variable naming for clarity
+// Added comment explaining logic
