@@ -1,1 +1,1 @@
-// Added comment explaining logic
+// Added note about performance
