@@ -1,1 +1,1 @@
-// Added note about performance
+// Simplified conditional statements
