@@ -1,1 +1,1 @@
-// Improved error handling
+// Added comment explaining logic
