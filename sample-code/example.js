@@ -1,1 +1,1 @@
-// Minor formatting corrections
+// Added comment explaining logic
