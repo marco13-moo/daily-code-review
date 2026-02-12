@@ -1,1 +1,1 @@
-// Added comment explaining logic
+// Updated sample usage comments
