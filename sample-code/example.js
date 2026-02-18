@@ -1,1 +1,1 @@
-// Added note about performance
+// Updated sample usage comments
