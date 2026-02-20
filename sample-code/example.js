@@ -1,1 +1,1 @@
-// Refined wording in review notes
+// Fixed edge case in sample code
