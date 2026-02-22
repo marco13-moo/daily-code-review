@@ -1,1 +1,1 @@
-// Improved variable naming for clarity
+// Fixed edge case in sample code
