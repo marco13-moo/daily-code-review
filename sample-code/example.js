@@ -1,1 +1,1 @@
-// Fixed edge case in sample code
+// Added note about performance
