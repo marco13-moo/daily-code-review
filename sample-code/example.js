@@ -1,1 +1,1 @@
-// Enhanced readability of examples
+// Added note about performance
