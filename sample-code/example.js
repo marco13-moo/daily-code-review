@@ -1,1 +1,1 @@
-// Fixed typo in variable names
+// Added note about performance
