@@ -1,1 +1,1 @@
-// Added note about performance
+// Improved code snippet formatting
