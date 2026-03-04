@@ -56,3 +56,4 @@
 - 2026-03-01: Added note about performance
 - 2026-03-02: Improved code snippet formatting
 - 2026-03-03: Clarified instructions in README
+- 2026-03-04: Added comment explaining logic
