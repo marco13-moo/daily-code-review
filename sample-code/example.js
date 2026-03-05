@@ -1,1 +1,1 @@
-// Added comment explaining logic
+// Improved code snippet formatting
