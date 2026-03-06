@@ -1,1 +1,1 @@
-// Improved code snippet formatting
+// Improved error handling
