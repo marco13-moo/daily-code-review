@@ -1,1 +1,1 @@
-// Updated function examples
+// Simplified conditional statements
