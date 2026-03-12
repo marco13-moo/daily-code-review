@@ -1,1 +1,1 @@
-// Updated example output in docs
+// Fixed minor bug in example
