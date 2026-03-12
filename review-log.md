@@ -64,3 +64,4 @@
 - 2026-03-09: Simplified conditional statements
 - 2026-03-10: Improved error handling
 - 2026-03-11: Updated example output in docs
+- 2026-03-12: Fixed minor bug in example
