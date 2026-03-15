@@ -67,3 +67,4 @@
 - 2026-03-12: Fixed minor bug in example
 - 2026-03-13: Updated example output in docs
 - 2026-03-14: Added note about performance
+- 2026-03-15: Updated function examples
