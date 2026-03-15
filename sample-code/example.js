@@ -1,1 +1,1 @@
-// Added note about performance
+// Updated function examples
