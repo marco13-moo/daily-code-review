@@ -1,1 +1,1 @@
-// Enhanced readability of examples
+// Improved variable naming for clarity
