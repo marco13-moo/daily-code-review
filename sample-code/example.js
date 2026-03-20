@@ -1,1 +1,1 @@
-// Added comment explaining logic
+// Updated example output in docs
