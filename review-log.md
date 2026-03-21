@@ -73,3 +73,4 @@
 - 2026-03-18: Clarified instructions in README
 - 2026-03-19: Added comment explaining logic
 - 2026-03-20: Updated example output in docs
+- 2026-03-21: Clarified instructions in README
