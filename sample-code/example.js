@@ -1,1 +1,1 @@
-// Added note about performance
+// Improved variable naming for clarity
