@@ -76,3 +76,4 @@
 - 2026-03-21: Clarified instructions in README
 - 2026-03-22: Added note about performance
 - 2026-03-25: Added note about performance
+- 2026-03-26: Minor formatting corrections
