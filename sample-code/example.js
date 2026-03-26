@@ -1,1 +1,1 @@
-// Added note about performance
+// Minor formatting corrections
