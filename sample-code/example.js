@@ -1,1 +1,1 @@
-// Clarified instructions in README
+// Added brief explanation for edge cases
