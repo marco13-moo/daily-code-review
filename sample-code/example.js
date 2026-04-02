@@ -1,1 +1,1 @@
-// Fixed edge case in sample code
+// Improved code snippet formatting
