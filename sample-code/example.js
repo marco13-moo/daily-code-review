@@ -1,1 +1,1 @@
-// Improved code snippet formatting
+// Added brief explanation for edge cases
