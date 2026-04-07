@@ -87,3 +87,4 @@
 - 2026-04-04: Added brief explanation for edge cases
 - 2026-04-05: Enhanced readability of examples
 - 2026-04-06: Reorganized imports
+- 2026-04-07: Refactored function for readability
