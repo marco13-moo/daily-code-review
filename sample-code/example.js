@@ -1,1 +1,1 @@
-// Improved code snippet formatting
+// Improved variable naming for clarity
