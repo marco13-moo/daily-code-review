@@ -91,3 +91,4 @@
 - 2026-04-08: Improved code snippet formatting
 - 2026-04-10: Improved variable naming for clarity
 - 2026-04-11: Refactored function for readability
+- 2026-04-12: Added comment explaining logic
