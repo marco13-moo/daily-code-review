@@ -1,1 +1,1 @@
-// Minor formatting corrections
+// Improved code snippet formatting
