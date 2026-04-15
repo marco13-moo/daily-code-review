@@ -1,1 +1,1 @@
-// Improved code snippet formatting
+// Updated example output in docs
