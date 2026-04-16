@@ -95,3 +95,4 @@
 - 2026-04-13: Minor formatting corrections
 - 2026-04-14: Improved code snippet formatting
 - 2026-04-15: Updated example output in docs
+- 2026-04-16: Refactored function for readability
