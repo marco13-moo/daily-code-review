@@ -98,3 +98,4 @@
 - 2026-04-16: Refactored function for readability
 - 2026-04-17: Improved error handling
 - 2026-04-18: Improved variable naming for clarity
+- 2026-04-19: Clarified instructions in README
