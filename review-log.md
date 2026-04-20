@@ -99,3 +99,4 @@
 - 2026-04-17: Improved error handling
 - 2026-04-18: Improved variable naming for clarity
 - 2026-04-19: Clarified instructions in README
+- 2026-04-20: Added comment explaining logic
