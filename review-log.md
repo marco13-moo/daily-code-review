@@ -100,3 +100,4 @@
 - 2026-04-18: Improved variable naming for clarity
 - 2026-04-19: Clarified instructions in README
 - 2026-04-20: Added comment explaining logic
+- 2026-04-21: Simplified conditional statements
