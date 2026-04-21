@@ -1,1 +1,1 @@
-// Added comment explaining logic
+// Simplified conditional statements
