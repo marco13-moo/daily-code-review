@@ -1,1 +1,1 @@
-// Simplified conditional statements
+// Fixed minor bug in example
