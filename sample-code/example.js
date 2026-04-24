@@ -1,1 +1,1 @@
-// Added note about performance
+// Improved error handling
