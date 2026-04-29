@@ -108,3 +108,4 @@
 - 2026-04-26: Updated function examples
 - 2026-04-27: Improved error handling
 - 2026-04-28: Clarified instructions in README
+- 2026-04-29: Clarified instructions in README
