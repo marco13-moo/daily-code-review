@@ -110,3 +110,4 @@
 - 2026-04-28: Clarified instructions in README
 - 2026-04-29: Clarified instructions in README
 - 2026-04-30: Improved code snippet formatting
+- 2026-05-01: Clarified instructions in README
