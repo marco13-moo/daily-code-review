@@ -1,1 +1,1 @@
-// Improved code snippet formatting
+// Clarified instructions in README
