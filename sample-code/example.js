@@ -1,1 +1,1 @@
-// Reorganized imports
+// Refactored function for readability
