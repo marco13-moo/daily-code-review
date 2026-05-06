@@ -1,1 +1,1 @@
-// Refactored function for readability
+// Added missing semicolons
