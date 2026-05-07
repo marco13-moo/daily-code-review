@@ -116,3 +116,4 @@
 - 2026-05-04: Reorganized imports
 - 2026-05-05: Refactored function for readability
 - 2026-05-06: Added missing semicolons
+- 2026-05-07: Updated example output in docs
