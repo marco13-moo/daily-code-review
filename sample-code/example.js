@@ -1,1 +1,1 @@
-// Added missing semicolons
+// Added note about performance
