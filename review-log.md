@@ -119,3 +119,4 @@
 - 2026-05-07: Updated example output in docs
 - 2026-05-08: Reorganized imports
 - 2026-05-09: Added missing semicolons
+- 2026-05-10: Added note about performance
