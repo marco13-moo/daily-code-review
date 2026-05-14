@@ -123,3 +123,4 @@
 - 2026-05-11: Improved code snippet formatting
 - 2026-05-12: Improved variable naming for clarity
 - 2026-05-13: Refactored function for readability
+- 2026-05-14: Clarified instructions in README
