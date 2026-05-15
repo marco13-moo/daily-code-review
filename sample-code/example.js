@@ -1,1 +1,1 @@
-// Clarified instructions in README
+// Added missing semicolons
