@@ -125,3 +125,4 @@
 - 2026-05-13: Refactored function for readability
 - 2026-05-14: Clarified instructions in README
 - 2026-05-15: Added missing semicolons
+- 2026-05-16: Updated example output in docs
