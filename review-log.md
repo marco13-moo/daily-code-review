@@ -127,3 +127,4 @@
 - 2026-05-15: Added missing semicolons
 - 2026-05-16: Updated example output in docs
 - 2026-05-17: Added note about performance
+- 2026-05-18: Fixed minor bug in example
