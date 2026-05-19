@@ -128,3 +128,4 @@
 - 2026-05-16: Updated example output in docs
 - 2026-05-17: Added note about performance
 - 2026-05-18: Fixed minor bug in example
+- 2026-05-19: Improved variable naming for clarity
