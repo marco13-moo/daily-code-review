@@ -1,1 +1,1 @@
-// Improved variable naming for clarity
+// Simplified conditional statements
