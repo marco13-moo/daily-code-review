@@ -130,3 +130,4 @@
 - 2026-05-18: Fixed minor bug in example
 - 2026-05-19: Improved variable naming for clarity
 - 2026-05-20: Simplified conditional statements
+- 2026-05-21: Added comment explaining logic
