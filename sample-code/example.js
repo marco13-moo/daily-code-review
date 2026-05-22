@@ -1,1 +1,1 @@
-// Added comment explaining logic
+// Enhanced readability of examples
