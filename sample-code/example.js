@@ -1,1 +1,1 @@
-// Fixed edge case in sample code
+// Clarified instructions in README
