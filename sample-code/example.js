@@ -1,1 +1,1 @@
-// Clarified instructions in README
+// Enhanced readability of examples
