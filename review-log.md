@@ -136,3 +136,4 @@
 - 2026-05-24: Fixed edge case in sample code
 - 2026-05-25: Clarified instructions in README
 - 2026-05-27: Enhanced readability of examples
+- 2026-05-28: Fixed edge case in sample code
