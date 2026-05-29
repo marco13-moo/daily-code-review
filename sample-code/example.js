@@ -1,1 +1,1 @@
-// Fixed edge case in sample code
+// Fixed typo in variable names
