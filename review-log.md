@@ -139,3 +139,4 @@
 - 2026-05-28: Fixed edge case in sample code
 - 2026-05-29: Fixed typo in variable names
 - 2026-05-30: Improved error handling
+- 2026-05-31: Fixed minor bug in example
