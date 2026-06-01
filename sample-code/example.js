@@ -1,1 +1,1 @@
-// Fixed minor bug in example
+// Clarified instructions in README
