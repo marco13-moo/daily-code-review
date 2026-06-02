@@ -141,3 +141,4 @@
 - 2026-05-30: Improved error handling
 - 2026-05-31: Fixed minor bug in example
 - 2026-06-01: Clarified instructions in README
+- 2026-06-02: Enhanced readability of examples
