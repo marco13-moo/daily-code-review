@@ -1,1 +1,1 @@
-// Reorganized imports
+// Added note about performance
