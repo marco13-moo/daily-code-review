@@ -143,3 +143,4 @@
 - 2026-06-01: Clarified instructions in README
 - 2026-06-02: Enhanced readability of examples
 - 2026-06-03: Reorganized imports
+- 2026-06-04: Added note about performance
