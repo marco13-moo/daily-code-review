@@ -1,1 +1,1 @@
-// Added note about performance
+// Clarified instructions in README
