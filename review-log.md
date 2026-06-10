@@ -149,3 +149,4 @@
 - 2026-06-07: Refined wording in review notes
 - 2026-06-08: Added missing semicolons
 - 2026-06-09: Reorganized imports
+- 2026-06-10: Added brief explanation for edge cases
