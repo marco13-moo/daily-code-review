@@ -1,1 +1,1 @@
-// Added brief explanation for edge cases
+// Refined wording in review notes
