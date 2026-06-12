@@ -1,1 +1,1 @@
-// Refined wording in review notes
+// Added note about performance
