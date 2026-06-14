@@ -1,1 +1,1 @@
-// Simplified conditional statements
+// Improved error handling
