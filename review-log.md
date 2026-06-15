@@ -154,3 +154,4 @@
 - 2026-06-12: Added note about performance
 - 2026-06-13: Simplified conditional statements
 - 2026-06-14: Improved error handling
+- 2026-06-15: Fixed minor bug in example
