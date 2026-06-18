@@ -1,1 +1,1 @@
-// Fixed typo in variable names
+// Refined wording in review notes
