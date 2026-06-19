@@ -1,1 +1,1 @@
-// Refined wording in review notes
+// Updated sample usage comments
