@@ -159,3 +159,4 @@
 - 2026-06-17: Fixed typo in variable names
 - 2026-06-18: Refined wording in review notes
 - 2026-06-19: Updated sample usage comments
+- 2026-06-20: Fixed minor bug in example
