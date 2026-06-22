@@ -1,1 +1,1 @@
-// Added missing semicolons
+// Updated sample usage comments
