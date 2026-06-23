@@ -162,3 +162,4 @@
 - 2026-06-20: Fixed minor bug in example
 - 2026-06-21: Added missing semicolons
 - 2026-06-22: Updated sample usage comments
+- 2026-06-23: Enhanced readability of examples
