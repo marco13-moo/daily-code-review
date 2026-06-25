@@ -1,1 +1,1 @@
-// Enhanced readability of examples
+// Fixed edge case in sample code
