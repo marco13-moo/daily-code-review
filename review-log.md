@@ -165,3 +165,4 @@
 - 2026-06-23: Enhanced readability of examples
 - 2026-06-24: Enhanced readability of examples
 - 2026-06-25: Fixed edge case in sample code
+- 2026-06-26: Refactored function for readability
