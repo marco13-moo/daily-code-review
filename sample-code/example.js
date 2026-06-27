@@ -1,1 +1,1 @@
-// Refactored function for readability
+// Fixed typo in variable names
