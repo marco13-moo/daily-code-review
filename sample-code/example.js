@@ -1,1 +1,1 @@
-// Fixed typo in variable names
+// Added brief explanation for edge cases
