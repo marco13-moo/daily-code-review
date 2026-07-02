@@ -1,1 +1,1 @@
-// Minor formatting corrections
+// Improved variable naming for clarity
