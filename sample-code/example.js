@@ -1,1 +1,1 @@
-// Refined wording in review notes
+// Improved variable naming for clarity
