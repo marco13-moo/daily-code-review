@@ -1,1 +1,1 @@
-// Refined wording in review notes
+// Fixed minor bug in example
