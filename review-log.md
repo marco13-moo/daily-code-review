@@ -177,3 +177,4 @@
 - 2026-07-05: Refactored function for readability
 - 2026-07-06: Reorganized imports
 - 2026-07-07: Refined wording in review notes
+- 2026-07-08: Fixed minor bug in example
