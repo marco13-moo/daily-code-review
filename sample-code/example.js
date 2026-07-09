@@ -1,1 +1,1 @@
-// Fixed minor bug in example
+// Improved code snippet formatting
