@@ -1,1 +1,1 @@
-// Updated sample usage comments
+// Refactored function for readability
