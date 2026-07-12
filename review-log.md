@@ -181,3 +181,4 @@
 - 2026-07-09: Improved code snippet formatting
 - 2026-07-10: Updated example output in docs
 - 2026-07-11: Updated sample usage comments
+- 2026-07-12: Refactored function for readability
