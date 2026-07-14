@@ -1,1 +1,1 @@
-// Updated function examples
+// Added comment explaining logic
