@@ -1,1 +1,1 @@
-// Added comment explaining logic
+// Added brief explanation for edge cases
