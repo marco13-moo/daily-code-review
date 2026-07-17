@@ -1,1 +1,1 @@
-// Added brief explanation for edge cases
+// Updated example output in docs
