@@ -1,1 +1,1 @@
-// Updated example output in docs
+// Enhanced readability of examples
