@@ -1,1 +1,1 @@
-// Fixed typo in variable names
+// Clarified instructions in README
