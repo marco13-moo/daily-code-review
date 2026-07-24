@@ -193,3 +193,4 @@
 - 2026-07-21: Clarified instructions in README
 - 2026-07-22: Added note about performance
 - 2026-07-23: Refined wording in review notes
+- 2026-07-24: Added brief explanation for edge cases
