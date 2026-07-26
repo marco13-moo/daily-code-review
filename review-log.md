@@ -195,3 +195,4 @@
 - 2026-07-23: Refined wording in review notes
 - 2026-07-24: Added brief explanation for edge cases
 - 2026-07-25: Updated sample usage comments
+- 2026-07-26: Improved error handling
