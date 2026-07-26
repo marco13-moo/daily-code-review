@@ -1,1 +1,1 @@
-// Updated sample usage comments
+// Improved error handling
