@@ -31,8 +31,8 @@ jobs:
             "0 18 * * *") SLOT=3 ;;
           esac
 
-          DAY_SEED=$(date -u +%Y%j)
-          CHOSEN_SLOT=$((10#$DAY_SEED % 4))
+          DAY_HASH=$(date -u +%F | cksum | awk '{print $1}')
+          CHOSEN_SLOT=$((DAY_HASH % 4))
           if [ "$SLOT" -eq "$CHOSEN_SLOT" ]; then
             echo "run=true" >> "$GITHUB_OUTPUT"
             echo "delay=$((RANDOM % 46))" >> "$GITHUB_OUTPUT"
