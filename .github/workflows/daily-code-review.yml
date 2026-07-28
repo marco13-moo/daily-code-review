@@ -2,96 +2,107 @@ name: Daily Code Review Simulation
 
 on:
   schedule:
-    - cron: "30 7 * * *"   # daily at 07:30 UTC
+    - cron: "0 0 * * *"
+    - cron: "0 6 * * *"
+    - cron: "0 12 * * *"
+    - cron: "0 18 * * *"
   workflow_dispatch:
 
 jobs:
-  code_review:
+  select-window:
     runs-on: ubuntu-latest
+    outputs:
+      run: ${{ steps.pick.outputs.run }}
+      delay: ${{ steps.pick.outputs.delay }}
+    steps:
+      - id: pick
+        shell: bash
+        run: |
+          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "delay=0" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+
+          case "${{ github.event.schedule }}" in
+            "0 0 * * *") SLOT=0 ;;
+            "0 6 * * *") SLOT=1 ;;
+            "0 12 * * *") SLOT=2 ;;
+            "0 18 * * *") SLOT=3 ;;
+          esac
+
+          DAY_SEED=$(date -u +%Y%j)
+          CHOSEN_SLOT=$((10#$DAY_SEED % 4))
+          if [ "$SLOT" -eq "$CHOSEN_SLOT" ]; then
+            echo "run=true" >> "$GITHUB_OUTPUT"
+            echo "delay=$((RANDOM % 46))" >> "$GITHUB_OUTPUT"
+          else
+            echo "run=false" >> "$GITHUB_OUTPUT"
+            echo "delay=0" >> "$GITHUB_OUTPUT"
+          fi
+
+  code-review:
+    needs: select-window
+    if: needs.select-window.outputs.run == 'true'
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
 
     steps:
+      - name: Wait for randomized start
+        run: sleep "$((${{ needs.select-window.outputs.delay }} * 60))"
+
       - name: Checkout
         uses: actions/checkout@v4
         with:
           token: ${{ secrets.GH_REVIEW_TOKEN }}
+          fetch-depth: 0
 
-      - name: Set date
-        run: echo "DATE=$(date +'%Y-%m-%d')" >> $GITHUB_ENV
-
-      - name: Ensure review log exists
-        run: touch review-log.md
-
-      - name: Pick random review comment
+      - name: Create randomized review commits
+        shell: bash
         run: |
+          DATE=$(date -u +'%Y-%m-%d')
+          BRANCH="review-$DATE"
           COMMENTS=(
             "Refactored function for readability"
-            "Added missing semicolons"
-            "Improved variable naming for clarity"
-            "Updated example output in docs"
-            "Fixed edge case in sample code"
-            "Added comment explaining logic"
-            "Reorganized imports"
-            "Simplified conditional statements"
+            "Improved variable naming"
+            "Updated example output"
+            "Documented an edge case"
             "Improved error handling"
-            "Minor formatting corrections"
-            "Clarified instructions in README"
-            "Updated function examples"
-            "Added note about performance"
-            "Fixed typo in variable names"
-            "Improved code snippet formatting"
-            "Added brief explanation for edge cases"
-            "Updated sample usage comments"
-            "Fixed minor bug in example"
-            "Refined wording in review notes"
-            "Enhanced readability of examples"
+            "Clarified README instructions"
+            "Updated sample usage"
+            "Improved code formatting"
           )
-          INDEX=$((RANDOM % ${#COMMENTS[@]}))
-          echo "REVIEW_COMMENT=${COMMENTS[$INDEX]}" >> $GITHUB_ENV
 
-      - name: Update review log and sample code
-        run: |
-          echo "- $DATE: $REVIEW_COMMENT" >> review-log.md
-          echo "// $REVIEW_COMMENT" > sample-code/example.js
+          mkdir -p sample-code
+          touch review-log.md sample-code/example.js
+          git checkout -b "$BRANCH"
+          git config user.name "marco13-moo"
+          git config user.email "210023993+marco13-moo@users.noreply.github.com"
 
-      - name: Commit changes
-        run: |
-          git checkout -b review-$DATE
-          git config user.name "code-review-bot"
-          git config user.email "bot@users.noreply.github.com"
-          git add review-log.md sample-code/example.js
-          git commit -m "Daily code review: $REVIEW_COMMENT"
-          git push origin review-$DATE
+          COMMIT_COUNT=$((RANDOM % 6 + 1))
+          echo "COMMIT_COUNT=$COMMIT_COUNT" >> "$GITHUB_ENV"
+          echo "BRANCH=$BRANCH" >> "$GITHUB_ENV"
 
-      - name: Create PR
+          for ((i=1; i<=COMMIT_COUNT; i++)); do
+            COMMENT=${COMMENTS[$((RANDOM % ${#COMMENTS[@]}))]}
+            echo "- $(date -u +'%Y-%m-%dT%H:%M:%SZ') [$i/$COMMIT_COUNT]: $COMMENT" >> review-log.md
+            echo "// $COMMENT ($i/$COMMIT_COUNT)" > sample-code/example.js
+            git add review-log.md sample-code/example.js
+            git commit -m "Code review: $COMMENT ($i/$COMMIT_COUNT)"
+          done
+
+          git push origin "$BRANCH"
+
+      - name: Create and merge PR
         env:
           GH_TOKEN: ${{ secrets.GH_REVIEW_TOKEN }}
         run: |
-          PR_URL=$(gh pr create \
-            --title "Daily code review: $REVIEW_COMMENT" \
-            --body "Automated daily code review simulation.\n\n$REVIEW_COMMENT" \
-            --base main \
-            --head review-$DATE)
-          PR_NUMBER=$(basename "$PR_URL")
-          echo "PR_NUMBER=$PR_NUMBER" >> $GITHUB_ENV
+          PR_URL=$(gh pr create             --title "Daily code review: $COMMIT_COUNT updates"             --body "Automated review simulation with $COMMIT_COUNT randomized commits."             --base main             --head "$BRANCH")
+          gh pr merge "$(basename "$PR_URL")" --merge --delete-branch
 
-      - name: Merge PR automatically
+      - name: Create and close review issue
         env:
           GH_TOKEN: ${{ secrets.GH_REVIEW_TOKEN }}
         run: |
-          gh pr merge $PR_NUMBER --merge --delete-branch
-
-      - name: Create review issue
-        env:
-          GH_TOKEN: ${{ secrets.GH_REVIEW_TOKEN }}
-        run: |
-          ISSUE_URL=$(gh issue create \
-            --title "Code review log: $REVIEW_COMMENT" \
-            --body "Simulated daily code review entry.\n\n$REVIEW_COMMENT")
-          ISSUE_NUMBER=$(basename "$ISSUE_URL") 
-          echo "ISSUE_NUMBER=$ISSUE_NUMBER" >> $GITHUB_ENV
-
-      - name: Close review issue
-        env:
-          GH_TOKEN: ${{ secrets.GH_REVIEW_TOKEN }}
-        run: |
-          gh issue close $ISSUE_NUMBER --comment "Automatically completed."
+          ISSUE_URL=$(gh issue create             --title "Daily review completed: $COMMIT_COUNT updates"             --body "Completed today's randomized code-review run.")
+          gh issue close "$(basename "$ISSUE_URL")" --comment "Completed automatically."
