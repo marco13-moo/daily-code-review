@@ -1,1 +1,1 @@
-// Documented an edge case (1/1)
+// Refactored function for readability (1/6)
