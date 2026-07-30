@@ -1,1 +1,1 @@
-// Documented an edge case (1/1)
+// Improved error handling (6/6)
