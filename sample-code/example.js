@@ -1,1 +1,1 @@
-// Clarified README instructions (2/2)
+// Refactored function for readability (1/4)
