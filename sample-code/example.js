@@ -1,1 +1,1 @@
-// Updated sample usage (3/4)
+// Clarified README instructions (4/4)
