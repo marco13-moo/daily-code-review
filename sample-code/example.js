@@ -1,1 +1,1 @@
-// Updated example output (1/5)
+// Improved variable naming (2/5)
