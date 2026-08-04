@@ -219,3 +219,4 @@
 - 2026-08-03T03:31:20Z [5/5]: Updated sample usage
 - 2026-08-04T08:57:45Z [1/5]: Documented an edge case
 - 2026-08-04T08:57:45Z [2/5]: Updated example output
+- 2026-08-04T08:57:45Z [3/5]: Clarified README instructions
