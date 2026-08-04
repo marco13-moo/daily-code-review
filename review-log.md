@@ -220,3 +220,4 @@
 - 2026-08-04T08:57:45Z [1/5]: Documented an edge case
 - 2026-08-04T08:57:45Z [2/5]: Updated example output
 - 2026-08-04T08:57:45Z [3/5]: Clarified README instructions
+- 2026-08-04T08:57:45Z [4/5]: Clarified README instructions
