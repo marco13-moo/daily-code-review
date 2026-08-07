@@ -1,1 +1,1 @@
-// Refactored function for readability (1/1)
+// Improved variable naming (6/6)
