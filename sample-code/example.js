@@ -1,1 +1,1 @@
-// Updated sample usage (5/6)
+// Improved variable naming (6/6)
