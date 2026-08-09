@@ -1,1 +1,1 @@
-// Improved error handling (1/6)
+// Clarified README instructions (2/6)
