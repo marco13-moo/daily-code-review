@@ -236,3 +236,4 @@
 - 2026-08-09T13:05:59Z [1/6]: Improved error handling
 - 2026-08-09T13:05:59Z [2/6]: Clarified README instructions
 - 2026-08-09T13:05:59Z [3/6]: Improved code formatting
+- 2026-08-09T13:05:59Z [4/6]: Documented an edge case
