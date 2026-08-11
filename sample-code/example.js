@@ -1,1 +1,1 @@
-// Documented an edge case (3/6)
+// Improved code formatting (4/6)
