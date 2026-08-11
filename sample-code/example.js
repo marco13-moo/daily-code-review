@@ -1,1 +1,1 @@
-// Improved code formatting (4/6)
+// Clarified README instructions (5/6)
