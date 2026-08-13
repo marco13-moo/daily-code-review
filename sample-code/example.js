@@ -1,1 +1,1 @@
-// Improved code formatting (2/2)
+// Refactored function for readability (3/3)
