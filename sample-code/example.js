@@ -1,1 +1,1 @@
-// Refactored function for readability (3/3)
+// Documented an edge case (3/3)
