@@ -1,1 +1,1 @@
-// Improved code formatting (5/6)
+// Updated sample usage (6/6)
