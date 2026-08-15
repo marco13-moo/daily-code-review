@@ -1,1 +1,1 @@
-// Documented an edge case (3/3)
+// Updated example output (1/6)
