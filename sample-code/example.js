@@ -1,1 +1,1 @@
-// Updated sample usage (6/6)
+// Updated example output (6/6)
