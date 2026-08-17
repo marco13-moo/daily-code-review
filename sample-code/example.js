@@ -1,1 +1,1 @@
-// Updated example output (6/6)
+// Updated example output (1/1)
