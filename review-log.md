@@ -274,3 +274,4 @@
 - 2026-08-18T12:45:03Z [3/5]: Refactored function for readability
 - 2026-08-18T12:45:03Z [4/5]: Updated example output
 - 2026-08-18T12:45:03Z [5/5]: Refactored function for readability
+- 2026-08-19T07:08:16Z [1/1]: Clarified README instructions
