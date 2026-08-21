@@ -1,1 +1,1 @@
-// Refactored function for readability (5/6)
+// Updated example output (6/6)
