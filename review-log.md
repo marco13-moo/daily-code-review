@@ -280,3 +280,4 @@
 - 2026-08-21T18:45:36Z [1/6]: Improved error handling
 - 2026-08-21T18:45:36Z [2/6]: Clarified README instructions
 - 2026-08-21T18:45:36Z [3/6]: Updated sample usage
+- 2026-08-21T18:45:36Z [4/6]: Clarified README instructions
