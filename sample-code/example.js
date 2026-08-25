@@ -1,1 +1,1 @@
-// Improved variable naming (5/5)
+// Documented an edge case (3/3)
