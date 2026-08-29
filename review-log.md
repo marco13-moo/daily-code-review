@@ -305,3 +305,4 @@
 - 2026-08-29T20:33:45Z [1/4]: Refactored function for readability
 - 2026-08-29T20:33:45Z [2/4]: Improved error handling
 - 2026-08-29T20:33:45Z [3/4]: Updated sample usage
+- 2026-08-29T20:33:45Z [4/4]: Clarified README instructions
