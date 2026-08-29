@@ -1,1 +1,1 @@
-// Improved variable naming (3/3)
+// Clarified README instructions (4/4)
