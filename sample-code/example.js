@@ -1,1 +1,1 @@
-// Improved variable naming (2/6)
+// Improved error handling (3/6)
