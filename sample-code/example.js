@@ -1,1 +1,1 @@
-// Improved error handling (3/6)
+// Updated example output (4/6)
