@@ -324,3 +324,4 @@
 - 2026-09-02T20:59:34Z [4/6]: Updated example output
 - 2026-09-02T20:59:34Z [5/6]: Updated example output
 - 2026-09-02T20:59:34Z [6/6]: Refactored function for readability
+- 2026-09-03T04:08:12Z [1/2]: Clarified README instructions
