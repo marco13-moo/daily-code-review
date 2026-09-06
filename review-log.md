@@ -331,3 +331,4 @@
 - 2026-09-05T14:52:58Z [1/2]: Updated example output
 - 2026-09-05T14:52:58Z [2/2]: Updated example output
 - 2026-09-06T20:22:16Z [1/4]: Improved error handling
+- 2026-09-06T20:22:16Z [2/4]: Updated sample usage

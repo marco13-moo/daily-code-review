@@ -1,1 +1,1 @@
-// Improved error handling (1/4)
+// Updated sample usage (2/4)
