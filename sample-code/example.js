@@ -1,1 +1,1 @@
-// Updated example output (4/4)
+// Improved code formatting (1/3)
