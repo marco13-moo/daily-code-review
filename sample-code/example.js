@@ -1,1 +1,1 @@
-// Improved error handling (1/6)
+// Refactored function for readability (2/6)
