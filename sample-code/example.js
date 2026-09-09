@@ -1,1 +1,1 @@
-// Improved code formatting (6/6)
+// Improved variable naming (1/2)
