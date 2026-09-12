@@ -355,3 +355,4 @@
 - 2026-09-11T11:29:56Z [6/6]: Improved error handling
 - 2026-09-12T04:02:02Z [1/5]: Improved error handling
 - 2026-09-12T04:02:02Z [2/5]: Improved error handling
+- 2026-09-12T04:02:02Z [3/5]: Clarified README instructions
