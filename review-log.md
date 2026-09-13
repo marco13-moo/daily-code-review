@@ -358,3 +358,4 @@
 - 2026-09-12T04:02:02Z [3/5]: Clarified README instructions
 - 2026-09-12T04:02:02Z [4/5]: Updated example output
 - 2026-09-12T04:02:02Z [5/5]: Updated example output
+- 2026-09-13T20:43:11Z [1/1]: Updated sample usage
