@@ -359,3 +359,9 @@
 - 2026-09-12T04:02:02Z [4/5]: Updated example output
 - 2026-09-12T04:02:02Z [5/5]: Updated example output
 - 2026-09-13T20:43:11Z [1/1]: Updated sample usage
+- 2026-09-14T17:27:48Z [1/6]: Updated sample usage
+- 2026-09-14T17:27:48Z [2/6]: Clarified README instructions
+- 2026-09-14T17:27:48Z [3/6]: Updated example output
+- 2026-09-14T17:27:48Z [4/6]: Clarified README instructions
+- 2026-09-14T17:27:48Z [5/6]: Refactored function for readability
+- 2026-09-14T17:27:48Z [6/6]: Clarified README instructions
