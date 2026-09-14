@@ -362,3 +362,4 @@
 - 2026-09-14T17:27:48Z [1/6]: Updated sample usage
 - 2026-09-14T17:27:48Z [2/6]: Clarified README instructions
 - 2026-09-14T17:27:48Z [3/6]: Updated example output
+- 2026-09-14T17:27:48Z [4/6]: Clarified README instructions
