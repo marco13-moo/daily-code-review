@@ -1,1 +1,1 @@
-// Clarified README instructions (2/6)
+// Updated example output (3/6)
