@@ -1,1 +1,1 @@
-// Clarified README instructions (6/6)
+// Clarified README instructions (3/3)
