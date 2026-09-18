@@ -1,108 +1,46 @@
-name: Daily Code Review Simulation
+name: Daily code review
 
 on:
   schedule:
-    - cron: "0 0 * * *"
-    - cron: "0 6 * * *"
-    - cron: "0 12 * * *"
-    - cron: "0 18 * * *"
+    - cron: "17 8 * * *"
   workflow_dispatch:
+    inputs:
+      dry_run:
+        description: Analyze eligible pull requests without submitting reviews
+        required: true
+        type: boolean
+        default: true
+
+# The repository token only checks out this repository. Cross-repository review
+# access is supplied through a separately scoped secret at the step boundary.
+permissions:
+  contents: read
+
+concurrency:
+  group: daily-code-review
+  cancel-in-progress: false
 
 jobs:
-  select-window:
+  review:
     runs-on: ubuntu-latest
-    outputs:
-      run: ${{ steps.pick.outputs.run }}
-      delay: ${{ steps.pick.outputs.delay }}
+    timeout-minutes: 15
     steps:
-      - id: pick
-        shell: bash
-        run: |
-          if [ "${{ github.event_name }}" = "workflow_dispatch" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-            echo "delay=0" >> "$GITHUB_OUTPUT"
-            exit 0
-          fi
+      - name: Check out reviewer
+        uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
 
-          case "${{ github.event.schedule }}" in
-            "0 0 * * *") SLOT=0 ;;
-            "0 6 * * *") SLOT=1 ;;
-            "0 12 * * *") SLOT=2 ;;
-            "0 18 * * *") SLOT=3 ;;
-          esac
-
-          DAY_HASH=$(date -u +%F | cksum | awk '{print $1}')
-          CHOSEN_SLOT=$((DAY_HASH % 4))
-          if [ "$SLOT" -eq "$CHOSEN_SLOT" ]; then
-            echo "run=true" >> "$GITHUB_OUTPUT"
-            echo "delay=$((RANDOM % 46))" >> "$GITHUB_OUTPUT"
-          else
-            echo "run=false" >> "$GITHUB_OUTPUT"
-            echo "delay=0" >> "$GITHUB_OUTPUT"
-          fi
-
-  code-review:
-    needs: select-window
-    if: needs.select-window.outputs.run == 'true'
-    runs-on: ubuntu-latest
-    timeout-minutes: 90
-
-    steps:
-      - name: Wait for randomized start
-        run: sleep "$((${{ needs.select-window.outputs.delay }} * 60))"
-
-      - name: Checkout
-        uses: actions/checkout@v4
+      - name: Configure Node.js
+        uses: actions/setup-node@49933ea5288caeca8642d1e84afbd3f7d6820020 # v4
         with:
-          token: ${{ secrets.GH_REVIEW_TOKEN }}
-          fetch-depth: 0
+          node-version: 20
 
-      - name: Create randomized review commits
-        shell: bash
-        run: |
-          DATE=$(date -u +'%Y-%m-%d')
-          BRANCH="review-$DATE"
-          COMMENTS=(
-            "Refactored function for readability"
-            "Improved variable naming"
-            "Updated example output"
-            "Documented an edge case"
-            "Improved error handling"
-            "Clarified README instructions"
-            "Updated sample usage"
-            "Improved code formatting"
-          )
+      - name: Verify reviewer
+        run: npm test
 
-          mkdir -p sample-code
-          touch review-log.md sample-code/example.js
-          git checkout -b "$BRANCH"
-          git config user.name "marco13-moo"
-          git config user.email "210023993+marco13-moo@users.noreply.github.com"
-
-          COMMIT_COUNT=$((RANDOM % 6 + 1))
-          echo "COMMIT_COUNT=$COMMIT_COUNT" >> "$GITHUB_ENV"
-          echo "BRANCH=$BRANCH" >> "$GITHUB_ENV"
-
-          for ((i=1; i<=COMMIT_COUNT; i++)); do
-            COMMENT=${COMMENTS[$((RANDOM % ${#COMMENTS[@]}))]}
-            echo "- $(date -u +'%Y-%m-%dT%H:%M:%SZ') [$i/$COMMIT_COUNT]: $COMMENT" >> review-log.md
-            echo "// $COMMENT ($i/$COMMIT_COUNT)" > sample-code/example.js
-            git add review-log.md sample-code/example.js
-            git commit -m "Code review: $COMMENT ($i/$COMMIT_COUNT)"
-          done
-
-          git push origin "$BRANCH"
-
-      - name: Create and merge PR
+      - name: Analyze pull requests
+        run: npm start
         env:
-          GH_TOKEN: ${{ secrets.GH_REVIEW_TOKEN }}
-        run: |
-          PR_URL=$(gh pr create             --title "Daily code review: $COMMIT_COUNT updates"             --body "Automated review simulation with $COMMIT_COUNT randomized commits."             --base main             --head "$BRANCH")
-          gh pr merge "$(basename "$PR_URL")" --merge --delete-branch
-
-      - name: Create and close review issue
-        env:
-          GH_TOKEN: ${{ secrets.GH_REVIEW_TOKEN }}
-        run: |
-          ISSUE_URL=$(gh issue create             --title "Daily review completed: $COMMIT_COUNT updates"             --body "Completed today's randomized code-review run.")
-          gh issue close "$(basename "$ISSUE_URL")" --comment "Completed automatically."
+          GITHUB_TOKEN: ${{ secrets.GH_REVIEW_TOKEN }}
+          REVIEW_REPOSITORIES: ${{ vars.REVIEW_REPOSITORIES }}
+          # Scheduled runs submit actionable findings. Manual runs are safe by
+          # default and require an explicit dry-run opt-out before posting.
+          DRY_RUN: ${{ github.event_name == 'schedule' && 'false' || inputs.dry_run }}
